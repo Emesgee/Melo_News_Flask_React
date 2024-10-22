@@ -1,0 +1,88 @@
+/* Sidebar.css */
+
+/* Hide sidebar initially */
+.sidebar {
+  width: 0;
+  height: 100%;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: width 0.3s;  /* Smooth transition for showing/hiding */
+  z-index: 1000; /* Ensure the sidebar is on top */
+}
+
+/* Sidebar when open */
+.sidebar.open {
+  width: 190px;  /* Set the width to show sidebar when open */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  text-align: left;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #575757;
+}
+
+/* Hamburger button */
+.hamburger {
+  position: fixed;
+  top: -8px;
+  left: -5px;  /* Match position to minimize button inside sidebar */
+  cursor: pointer;
+  background-color: #4f4b4b;
+  color: white;
+  padding: 8px;  /* Add some padding for a better look */
+  width: 50px;   /* Set a fixed width for consistency */
+  height: 50px;  /* Set a fixed height to keep it square */
+  border: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Optional - Adjust size for smaller screens (mobile responsiveness) */
+@media (max-width: 768px) {
+  .hamburger {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+
+/* Minimize button inside the sidebar */
+.minimize-btn {
+  position: absolute;
+  top: -10px;
+  left: 150px;  /* Match position to hamburger button */
+  background-color: #444;
+  color: white;
+  border: none;
+  width: 28px;
+  padding: px 10px;
+  cursor: pointer;
+  z-index: 1200; /* Ensure it’s on top of the sidebar */
+}
+ /* Media Queries for Responsive Design */
+ @media (max-width: 600px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+ }

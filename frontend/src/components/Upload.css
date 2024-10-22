@@ -1,0 +1,151 @@
+/* Global Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  /* Sidebar Styling */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -150px;
+    width: 250px;
+    height: 100%;
+    background-color: #dd2222;
+    color: white;
+    transition: left 0.3s ease-in-out;
+    z-index: 10;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 20px;
+  }
+  
+  .sidebar nav ul li {
+    margin: 20px 0;
+  }
+  
+  .sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+
+
+  /* Upload Container (adjusted when sidebar is open) */
+  .upload-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+   
+  }
+  
+  .upload-container.shifted {
+    transform: translateX(250px);
+  }
+  
+  /* Upload Page Header */
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+    /* Hamburger Menu Button */
+    .general-info-form{
+      columns: center;
+    }
+  
+  
+  form div {
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  input[type="file"] {
+    padding: 5px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  button:hover:enabled {
+    background-color: #0056b3;
+  }
+  
+  p {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: red;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    input, select, button {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    input, select, button {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    button {
+      padding: 8px;
+    }
+
+   
+  

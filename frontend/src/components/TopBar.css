@@ -1,0 +1,21 @@
+/* src/components/TopBar.css */
+.topbar {
+    background-color: #ff0000;
+    padding: 0px 500px;
+    position: fixed;
+    top: 0;
+    left: 240px;  /* Sidebar width */
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    width: 150%;
+    padding: 20px;
+    font-size: 1rem;
+    border: 5;
+    border-radius: 4px;
+  }
+  

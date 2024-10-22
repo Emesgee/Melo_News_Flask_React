@@ -1,0 +1,121 @@
+/* Container for the entire dashboard */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;  /* Sidebar takes 250px, the rest is for content */
+    grid-template-rows: auto 1fr;  /* First row is search bar, then content */
+    gap: 20px;
+    padding: 20px;
+    background-color: #6f2b2b;  /* Light background for dashboard */
+    transition: grid-template-columns 0.3s ease;  /* Smooth transition */
+    height: 100%;
+}
+
+
+/* Full-screen mode when sidebar is hidden */
+.dashboard-container.fullscreen {
+    grid-template-columns: 1fr;  /* Make content take full width */
+}
+
+/* Search bar */
+.search-bar {
+    grid-column: 2;  /* Place the search bar in the second column (next to sidebar) */
+    padding: 0px;
+    height: 40px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+/* Main content */
+.main-content {
+    grid-column: 2;  /* This spans the second column */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2px;
+}
+
+/* Graph section */
+.graph-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Other existing styles */
+
+.graph-placeholder {
+    height: 600px;  /* Ensure the map has enough space */
+    width: 1310px;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Add if needed for layout purposes */
+  }
+  
+  .map-area {
+    height: 100%; /* Ensure map takes full height of the placeholder */
+    width: 100%;  /* Ensure map takes full width */
+  }
+  
+
+/* --- Media Queries for Mobile Devices (e.g., iPhone SE, 375px and smaller) --- */
+@media (max-width: 480px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;  /* Use full width for the content, hide sidebar */
+        gap: 10px;  /* Reduce the gap for a tighter layout on small screens */
+        padding: 10px;  /* Reduce padding for mobile */
+    }
+
+    .search-bar {
+        grid-column: 1;  /* Make the search bar full width on mobile */
+        padding: 10px;
+    }
+
+    .search-bar input {
+        font-size: 1rem;  /* Smaller font size for mobile */
+        padding: 8px;  /* Reduce padding inside the input */
+    }
+
+    .metrics {
+        grid-column: 1;  /* Make metrics section full width */
+        flex-direction: column;  /* Stack metrics vertically on mobile */
+        gap: 10px;  /* Reduce gap between metric cards */
+    }
+
+    .metric p {
+        font-size: 1.2rem;  /* Smaller text size for metric values */
+    }
+
+    .main-content {
+        grid-column: 1;  /* Make the main content full width */
+        grid-template-columns: 1fr;  /* Stack main content vertically */
+    }
+
+    .graph-placeholder, .chart-placeholder {
+        width: 350px;   
+        height: 500px;  /* Reduce graph and chart placeholder height for mobile */
+    }
+
+    .metric, .graph-section, .chart {
+        padding: 10px;  /* Reduce padding inside metric cards, graphs, and charts */
+    }
+
+    footer {
+        font-size: 0.9rem;  /* Adjust footer font size */
+    }
+
+    body {
+        font-size: 14px;  /* Overall smaller font for mobile */
+    }
+
+    header h1 {
+        font-size: 1.4rem;  /* Reduce heading size for mobile */
+    }
+}
